@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SOS Fuite d'Eau — Questionnaire client</title>
+    <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-badge">
+      <span class="dot"></span>
+      Formulaire d'intervention
+    </div>
+    <h1 class="header-title">SOS Fuite <span>d'Eau</span></h1>
+    <p class="header-sub">Remplissez ce questionnaire pour décrire votre problème. Les informations seront transmises directement à notre équipe.</p>
+  </div>
+</header>
+
+<!-- MAIN -->
+<div class="main-wrap">
+
+  <!-- DOSSIER -->
+  <div class="dossier-card">
+    <div class="dossier-icon"></div>
+    <div style="flex:1">
+      <div class="dossier-label">Entrez votre email</div>
+      <input type="text" id="refRapport" class="dossier-input" placeholder="Email" autocomplete="off" />
+    </div>
+  </div>
+
+  <!-- TYPE -->
+  <div class="type-section">
+    <div class="section-label">Type d'intervention</div>
+    <div class="type-grid">
+      <button class="type-btn active" data-type="interieur"><span class="t-icon"></span>Intérieur</button>
+      <button class="type-btn" data-type="piscine"><span class="t-icon"></span>Piscine</button>
+      <button class="type-btn" data-type="toiture"><span class="t-icon"></span>Toiture</button>
+      <button class="type-btn" data-type="exterieur"><span class="t-icon"></span>Extérieur</button>
+    </div>
+  </div>
+
+  <form id="mainForm" autocomplete="off">
+
+    <!-- ======== INTÉRIEUR ======== -->
+    <div class="panel active" id="panel-interieur">
+
+      <div class="form-card">
+        <div class="form-card-header"><span class="step-num">1</span> Origine du sinistre</div>
+        <div class="form-card-body">
+          <div class="check-group">
+            <label class="check-label">Ancienneté :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="anciennete" value="moins24h"/> &lt;24h</label>
+              <label class="checkbox-item"><input type="checkbox" name="anciennete" value="2-7j"/> 2–7j</label>
+              <label class="checkbox-item"><input type="checkbox" name="anciennete" value="plus7j"/> &gt;7j</label>
+              <label class="checkbox-item"><input type="checkbox" name="anciennete" value="autre" class="triggers-preciser" data-target="anciennete_autre_wrap"/> Autre</label>
+            </div>
+            <div class="preciser-field" id="anciennete_autre_wrap"><input type="text" name="anciennete_autre" placeholder="Préciser…" /></div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Le dégât progresse :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="degat_progresse" value="oui"/> Oui</label>
+              <label class="checkbox-item"><input type="checkbox" name="degat_progresse" value="non"/> Non</label>
+              <label class="checkbox-item"><input type="checkbox" name="degat_progresse" value="nsp"/> Ne sait pas</label>
+            </div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Eau coule actuellement :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="eau_coule" value="oui"/> Oui</label>
+              <label class="checkbox-item"><input type="checkbox" name="eau_coule" value="non"/> Non</label>
+            </div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Alimentation eau coupée :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="alim_coupee" value="oui"/> Oui</label>
+              <label class="checkbox-item"><input type="checkbox" name="alim_coupee" value="non"/> Non</label>
+            </div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">La fuite s'arrête eau coupée :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="fuite_arrete" value="oui"/> Oui</label>
+              <label class="checkbox-item"><input type="checkbox" name="fuite_arrete" value="non"/> Non</label>
+              <label class="checkbox-item"><input type="checkbox" name="fuite_arrete" value="non_teste"/> Non testé</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <div class="form-card-header"><span class="step-num">2</span> Localisation du sinistre</div>
+        <div class="form-card-body">
+          <div class="check-group">
+            <label class="check-label">Zone concernée :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="zone_int" value="mur"/> Mur</label>
+              <label class="checkbox-item"><input type="checkbox" name="zone_int" value="sol"/> Sol</label>
+              <label class="checkbox-item"><input type="checkbox" name="zone_int" value="plafond"/> Plafond</label>
+              <label class="checkbox-item"><input type="checkbox" name="zone_int" value="cloison"/> Cloison</label>
+              <label class="checkbox-item"><input type="checkbox" name="zone_int" value="autre" class="triggers-preciser" data-target="zone_int_autre_wrap"/> Autre</label>
+            </div>
+            <div class="preciser-field" id="zone_int_autre_wrap"><input type="text" name="zone_int_autre" placeholder="Préciser…" /></div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Pièce(s) :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="piece" value="sdb"/> SDB</label>
+              <label class="checkbox-item"><input type="checkbox" name="piece" value="cuisine"/> Cuisine</label>
+              <label class="checkbox-item"><input type="checkbox" name="piece" value="wc"/> WC</label>
+              <label class="checkbox-item"><input type="checkbox" name="piece" value="chambre"/> Chambre</label>
+              <label class="checkbox-item"><input type="checkbox" name="piece" value="sejour"/> Séjour</label>
+              <label class="checkbox-item"><input type="checkbox" name="piece" value="autre" class="triggers-preciser" data-target="piece_autre_wrap"/> Autre</label>
+            </div>
+            <div class="preciser-field" id="piece_autre_wrap"><input type="text" name="piece_autre" placeholder="Préciser…" /></div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Niveau / étage :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="niveau" value="sous-sol"/> Sous-sol</label>
+              <label class="checkbox-item"><input type="checkbox" name="niveau" value="rdc"/> RDC</label>
+              <label class="checkbox-item"><input type="checkbox" name="niveau" value="etage"/> Étage</label>
+              <label class="checkbox-item"><input type="checkbox" name="niveau" value="autre" class="triggers-preciser" data-target="niveau_autre_wrap"/> Autre</label>
+            </div>
+            <div class="preciser-field" id="niveau_autre_wrap"><input type="text" name="niveau_autre" placeholder="Préciser…" /></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <div class="form-card-header"><span class="step-num">3</span> Environnement</div>
+        <div class="form-card-body">
+          <div class="check-group">
+            <label class="check-label">Au-dessus :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="au_dessus" value="sdb_wc"/> SDB/WC</label>
+              <label class="checkbox-item"><input type="checkbox" name="au_dessus" value="cuisine"/> Cuisine</label>
+              <label class="checkbox-item"><input type="checkbox" name="au_dessus" value="terrasse"/> Terrasse</label>
+              <label class="checkbox-item"><input type="checkbox" name="au_dessus" value="toiture"/> Toiture</label>
+              <label class="checkbox-item"><input type="checkbox" name="au_dessus" value="logement"/> Logement</label>
+              <label class="checkbox-item"><input type="checkbox" name="au_dessus" value="autre" class="triggers-preciser" data-target="au_dessus_autre_wrap"/> Autre</label>
+            </div>
+            <div class="preciser-field" id="au_dessus_autre_wrap"><input type="text" name="au_dessus_autre" placeholder="Préciser…" /></div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">En dessous :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="en_dessous" value="logement"/> Logement</label>
+              <label class="checkbox-item"><input type="checkbox" name="en_dessous" value="vide_sanitaire"/> Vide sanitaire</label>
+              <label class="checkbox-item"><input type="checkbox" name="en_dessous" value="local_technique_dessous"/> Local technique</label>
+              <label class="checkbox-item"><input type="checkbox" name="en_dessous" value="sol"/> Sol</label>
+              <label class="checkbox-item"><input type="checkbox" name="en_dessous" value="autre" class="triggers-preciser" data-target="en_dessous_autre_wrap"/> Autre</label>
+            </div>
+            <div class="preciser-field" id="en_dessous_autre_wrap"><input type="text" name="en_dessous_autre" placeholder="Préciser…" /></div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Derrière le mur :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="derriere_mur" value="sdb"/> SDB</label>
+              <label class="checkbox-item"><input type="checkbox" name="derriere_mur" value="cuisine"/> Cuisine</label>
+              <label class="checkbox-item"><input type="checkbox" name="derriere_mur" value="colonne"/> Colonne</label>
+              <label class="checkbox-item"><input type="checkbox" name="derriere_mur" value="exterieur"/> Extérieur</label>
+              <label class="checkbox-item"><input type="checkbox" name="derriere_mur" value="autre" class="triggers-preciser" data-target="derriere_mur_autre_wrap"/> Autre</label>
+            </div>
+            <div class="preciser-field" id="derriere_mur_autre_wrap"><input type="text" name="derriere_mur_autre" placeholder="Préciser…" /></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <div class="form-card-header"><span class="step-num">4</span> Humidité / Indices</div>
+        <div class="form-card-body">
+          <div class="check-group">
+            <label class="check-label">Zone plus humide :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="zone_humide" value="oui"/> Oui</label>
+              <label class="checkbox-item"><input type="checkbox" name="zone_humide" value="non"/> Non</label>
+            </div>
+          </div>
+          <div class="field-group">
+            <label>Précision (mur/angle/hauteur…)</label>
+            <input type="text" name="zone_humide_precision" placeholder="Détails…" />
+          </div>
+          <div class="check-group">
+            <label class="check-label">Odeur d'humidité :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="odeur" value="oui"/> Oui</label>
+              <label class="checkbox-item"><input type="checkbox" name="odeur" value="non"/> Non</label>
+            </div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Indices visibles :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="indices" value="traces"/> Traces</label>
+              <label class="checkbox-item"><input type="checkbox" name="indices" value="cloques"/> Cloques</label>
+              <label class="checkbox-item"><input type="checkbox" name="indices" value="moisissures"/> Moisissures</label>
+              <label class="checkbox-item"><input type="checkbox" name="indices" value="salpetre"/> Salpêtre</label>
+              <label class="checkbox-item"><input type="checkbox" name="indices" value="gouttelettes"/> Gouttelettes</label>
+              <label class="checkbox-item"><input type="checkbox" name="indices" value="aucun"/> Aucun</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <div class="form-card-header"><span class="step-num">5</span> Installations / Travaux</div>
+        <div class="form-card-body">
+          <div class="check-group">
+            <label class="check-label">Chauffe-eau / ballon :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="chauffe_eau" value="oui"/> Oui</label>
+              <label class="checkbox-item"><input type="checkbox" name="chauffe_eau" value="non"/> Non</label>
+            </div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Type :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="chauffe_eau_type" value="elec"/> Élec</label>
+              <label class="checkbox-item"><input type="checkbox" name="chauffe_eau_type" value="gaz"/> Gaz</label>
+              <label class="checkbox-item"><input type="checkbox" name="chauffe_eau_type" value="solaire"/> Solaire</label>
+              <label class="checkbox-item"><input type="checkbox" name="chauffe_eau_type" value="autre" class="triggers-preciser" data-target="chauffe_eau_type_autre_wrap"/> Autre</label>
+            </div>
+            <div class="preciser-field" id="chauffe_eau_type_autre_wrap"><input type="text" name="chauffe_eau_type_autre" placeholder="Préciser…" /></div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Travaux récents :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="travaux" value="oui"/> Oui</label>
+              <label class="checkbox-item"><input type="checkbox" name="travaux" value="non"/> Non</label>
+            </div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Nature :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="travaux_nature" value="plomberie"/> Plomberie</label>
+              <label class="checkbox-item"><input type="checkbox" name="travaux_nature" value="carrelage"/> Carrelage</label>
+              <label class="checkbox-item"><input type="checkbox" name="travaux_nature" value="etancheite"/> Étanchéité</label>
+              <label class="checkbox-item"><input type="checkbox" name="travaux_nature" value="cloison"/> Cloison</label>
+              <label class="checkbox-item"><input type="checkbox" name="travaux_nature" value="autre" class="triggers-preciser" data-target="travaux_nature_autre_wrap"/> Autre</label>
+            </div>
+            <div class="preciser-field" id="travaux_nature_autre_wrap"><input type="text" name="travaux_nature_autre" placeholder="Préciser…" /></div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /panel-interieur -->
+
+    <!-- ======== PISCINE ======== -->
+    <div class="panel" id="panel-piscine">
+      <div class="form-card">
+        <div class="form-card-header"><span class="step-num">1</span> Origine du problème / Perte d'eau</div>
+        <div class="form-card-body">
+          <div class="check-group">
+            <label class="check-label">Depuis quand le niveau baisse-t-il :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="p_anciennete" value="moins24h"/> &lt;24h</label>
+              <label class="checkbox-item"><input type="checkbox" name="p_anciennete" value="2-7j"/> 2–7j</label>
+              <label class="checkbox-item"><input type="checkbox" name="p_anciennete" value="plus7j"/> &gt;7j</label>
+              <label class="checkbox-item"><input type="checkbox" name="p_anciennete" value="autre" class="triggers-preciser" data-target="p_anciennete_autre_wrap"/> Autre</label>
+            </div>
+            <div class="preciser-field" id="p_anciennete_autre_wrap"><input type="text" name="p_anciennete_autre" placeholder="Préciser…" /></div>
+          </div>
+          <div class="field-group"><label>Perte d'eau estimée (cm/24h)</label><input type="text" name="perte_eau" placeholder="cm/24h" /></div>
+          <div class="check-group">
+            <label class="check-label">La fuite se produit :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="filtration_etat" value="filtration_marche"/> Filtration en marche</label>
+              <label class="checkbox-item"><input type="checkbox" name="filtration_etat" value="filtration_arretee"/> Filtration arrêtée</label>
+              <label class="checkbox-item"><input type="checkbox" name="filtration_etat" value="continu"/> En continu</label>
+              <label class="checkbox-item"><input type="checkbox" name="filtration_etat" value="autre" class="triggers-preciser" data-target="filtration_etat_autre_wrap"/> Autre</label>
+            </div>
+            <div class="preciser-field" id="filtration_etat_autre_wrap"><input type="text" name="filtration_etat_autre" placeholder="Préciser…" /></div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Le niveau cesse-t-il de descendre sous les skimmers :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="niveau_skimmer" value="oui"/> Oui</label>
+              <label class="checkbox-item"><input type="checkbox" name="niveau_skimmer" value="non"/> Non</label>
+              <label class="checkbox-item"><input type="checkbox" name="niveau_skimmer" value="autre" class="triggers-preciser" data-target="niveau_skimmer_autre_wrap"/> Autre</label>
+            </div>
+            <div class="preciser-field" id="niveau_skimmer_autre_wrap"><input type="text" name="niveau_skimmer_autre" placeholder="Préciser…" /></div>
+          </div>
+        </div>
+      </div>
+      <div class="form-card">
+        <div class="form-card-header"><span class="step-num">2</span> Type de piscine</div>
+        <div class="form-card-body">
+          <div class="check-group">
+            <label class="check-label">Type :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="type_piscine" value="skimmers"/> À skimmers</label>
+              <label class="checkbox-item"><input type="checkbox" name="type_piscine" value="debordement"/> À débordement</label>
+              <label class="checkbox-item"><input type="checkbox" name="type_piscine" value="miroir"/> Miroir</label>
+            </div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Revêtement / structure :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="revetement" value="carrelee"/> Carrelée</label>
+              <label class="checkbox-item"><input type="checkbox" name="revetement" value="liner"/> Liner</label>
+              <label class="checkbox-item"><input type="checkbox" name="revetement" value="coque"/> Coque</label>
+              <label class="checkbox-item"><input type="checkbox" name="revetement" value="autre" class="triggers-preciser" data-target="revetement_autre_wrap"/> Autre</label>
+            </div>
+            <div class="preciser-field" id="revetement_autre_wrap"><input type="text" name="revetement_autre" placeholder="Préciser…" /></div>
+          </div>
+          <div class="field-group"><label>Volume approximatif (m³)</label><input type="number" name="volume_piscine" placeholder="m³" /></div>
+        </div>
+      </div>
+      <div class="form-card">
+        <div class="form-card-header"><span class="step-num">3</span> Équipements présents</div>
+        <div class="form-card-body">
+          <div class="equip-grid">
+            <label class="equip-item"><input type="checkbox" name="equip" value="skimmers"/> Skimmers <input type="number" name="qte_skimmers" class="qte-input" placeholder="Qté"/></label>
+            <label class="equip-item"><input type="checkbox" name="equip" value="refoulements"/> Refoulements <input type="number" name="qte_refoulements" class="qte-input" placeholder="Qté"/></label>
+            <label class="equip-item"><input type="checkbox" name="equip" value="prise_balai"/> Prise balai <input type="number" name="qte_prise_balai" class="qte-input" placeholder="Qté"/></label>
+            <label class="equip-item"><input type="checkbox" name="equip" value="bonde_fond"/> Bonde de fond <input type="number" name="qte_bonde" class="qte-input" placeholder="Qté"/></label>
+            <label class="equip-item"><input type="checkbox" name="equip" value="trop_plein"/> Trop-plein <input type="number" name="qte_trop_plein" class="qte-input" placeholder="Qté"/></label>
+            <label class="equip-item"><input type="checkbox" name="equip" value="projecteurs"/> Projecteurs <input type="number" name="qte_projecteurs" class="qte-input" placeholder="Qté"/></label>
+            <label class="equip-item"><input type="checkbox" name="equip" value="coffret_elec"/> Coffret électrique</label>
+            <label class="equip-item"><input type="checkbox" name="equip" value="surpresseur"/> Surpresseur</label>
+            <label class="equip-item"><input type="checkbox" name="equip" value="pompe"/> Pompe <input type="number" name="qte_pompe" class="qte-input" placeholder="Qté"/></label>
+            <label class="equip-item"><input type="checkbox" name="equip" value="filtre"/> Filtre <input type="number" name="qte_filtre" class="qte-input" placeholder="Qté"/></label>
+            <label class="equip-item"><input type="checkbox" name="equip" value="bache"/> Bâche / volet <input type="number" name="qte_bache" class="qte-input" placeholder="Qté"/></label>
+          </div>
+          <div class="check-group" style="margin-top:6px">
+            <label class="check-label">Type de filtre :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="type_filtre" value="cartouche"/> Cartouche</label>
+              <label class="checkbox-item"><input type="checkbox" name="type_filtre" value="sable"/> Sable</label>
+              <label class="checkbox-item"><input type="checkbox" name="type_filtre" value="verre"/> Verre</label>
+              <label class="checkbox-item"><input type="checkbox" name="type_filtre" value="autre" class="triggers-preciser" data-target="type_filtre_autre_wrap"/> Autre</label>
+            </div>
+            <div class="preciser-field" id="type_filtre_autre_wrap"><input type="text" name="type_filtre_autre" placeholder="Préciser…" /></div>
+          </div>
+        </div>
+      </div>
+      <div class="form-card">
+        <div class="form-card-header"><span class="step-num">4</span> Local technique</div>
+        <div class="form-card-body">
+          <div class="check-group">
+            <label class="check-label">Local technique présent :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="local_technique" value="oui"/> Oui</label>
+              <label class="checkbox-item"><input type="checkbox" name="local_technique" value="non"/> Non</label>
+            </div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Le local technique contient :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="local_contient" value="filtre"/> Filtre</label>
+              <label class="checkbox-item"><input type="checkbox" name="local_contient" value="pompe"/> Pompe</label>
+              <label class="checkbox-item"><input type="checkbox" name="local_contient" value="pompe_balai"/> Pompe balai</label>
+              <label class="checkbox-item"><input type="checkbox" name="local_contient" value="pac"/> Pompe à chaleur</label>
+              <label class="checkbox-item"><input type="checkbox" name="local_contient" value="electrolyseur"/> Électrolyseur</label>
+              <label class="checkbox-item"><input type="checkbox" name="local_contient" value="regulation_ph"/> Régulation pH</label>
+              <label class="checkbox-item"><input type="checkbox" name="local_contient" value="soupapes"/> Soupapes/vannes</label>
+              <label class="checkbox-item"><input type="checkbox" name="local_contient" value="collecteurs"/> Collecteurs</label>
+            </div>
+          </div>
+          <div class="field-group"><label>Autre équipement</label><input type="text" name="local_autre_equip" placeholder="Préciser" /></div>
+          <div class="check-group">
+            <label class="check-label">Traces d'humidité dans le local :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="p_humidite_local" value="oui"/> Oui</label>
+              <label class="checkbox-item"><input type="checkbox" name="p_humidite_local" value="non"/> Non</label>
+              <label class="checkbox-item"><input type="checkbox" name="p_humidite_local" value="intermittence"/> Par intermittence</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-card">
+        <div class="form-card-header"><span class="step-num">5</span> Analyse technique par zone</div>
+        <div class="form-card-body">
+          <div class="check-group">
+            <label class="check-label">Skimmers — défaut visible :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="p_defaut_skimmer" value="oui"/> Oui</label>
+              <label class="checkbox-item"><input type="checkbox" name="p_defaut_skimmer" value="non"/> Non</label>
+              <label class="checkbox-item"><input type="checkbox" name="p_defaut_skimmer" value="autre" class="triggers-preciser" data-target="p_defaut_skimmer_autre_wrap"/> Autre</label>
+            </div>
+            <div class="preciser-field" id="p_defaut_skimmer_autre_wrap"><input type="text" name="p_defaut_skimmer_autre" placeholder="Préciser…" /></div>
+          </div>
+          <div class="field-group"><label>Précision skimmers</label><input type="text" name="p_defaut_skimmer_detail" placeholder="Détails…" /></div>
+          <div class="check-group">
+            <label class="check-label">Refoulements — micro-bulles ou anomalies :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="p_microbulles" value="oui"/> Oui</label>
+              <label class="checkbox-item"><input type="checkbox" name="p_microbulles" value="non"/> Non</label>
+              <label class="checkbox-item"><input type="checkbox" name="p_microbulles" value="intermittence"/> Par intermittence</label>
+              <label class="checkbox-item"><input type="checkbox" name="p_microbulles" value="autre" class="triggers-preciser" data-target="p_microbulles_autre_wrap"/> Autre</label>
+            </div>
+            <div class="preciser-field" id="p_microbulles_autre_wrap"><input type="text" name="p_microbulles_autre" placeholder="Préciser…" /></div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Bonde(s) de fond — en cause :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="p_bonde_cause" value="oui"/> Oui</label>
+              <label class="checkbox-item"><input type="checkbox" name="p_bonde_cause" value="non"/> Non</label>
+              <label class="checkbox-item"><input type="checkbox" name="p_bonde_cause" value="autre" class="triggers-preciser" data-target="p_bonde_cause_autre_wrap"/> Autre</label>
+            </div>
+            <div class="preciser-field" id="p_bonde_cause_autre_wrap"><input type="text" name="p_bonde_cause_autre" placeholder="Préciser…" /></div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Prise balai — perte pompe en marche :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="p_prise_balai_perte" value="oui"/> Oui</label>
+              <label class="checkbox-item"><input type="checkbox" name="p_prise_balai_perte" value="non"/> Non</label>
+              <label class="checkbox-item"><input type="checkbox" name="p_prise_balai_perte" value="intermittence"/> Par intermittence</label>
+              <label class="checkbox-item"><input type="checkbox" name="p_prise_balai_perte" value="autre" class="triggers-preciser" data-target="p_prise_balai_perte_autre_wrap"/> Autre</label>
+            </div>
+            <div class="preciser-field" id="p_prise_balai_perte_autre_wrap"><input type="text" name="p_prise_balai_perte_autre" placeholder="Préciser…" /></div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Canalisations enterrées :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="p_cana_enterrees" value="oui"/> Oui</label>
+              <label class="checkbox-item"><input type="checkbox" name="p_cana_enterrees" value="non"/> Non</label>
+              <label class="checkbox-item"><input type="checkbox" name="p_cana_enterrees" value="partiellement"/> Partiellement</label>
+            </div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Plan ou schéma connu :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="p_plan_connu" value="oui"/> Oui</label>
+              <label class="checkbox-item"><input type="checkbox" name="p_plan_connu" value="non"/> Non</label>
+            </div>
+          </div>
+          <div class="field-group"><label>Document / photo disponible</label><input type="text" name="p_plan_detail" placeholder="Préciser si disponible" /></div>
+        </div>
+      </div>
+    </div><!-- /panel-piscine -->
+
+    <!-- ======== TOITURE ======== -->
+    <div class="panel" id="panel-toiture">
+      <div class="form-card">
+        <div class="form-card-header"><span class="step-num">1</span> Origine du problème</div>
+        <div class="form-card-body">
+          <div class="check-group">
+            <label class="check-label">Depuis quand :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="t_anciennete" value="moins24h"/> &lt;24h</label>
+              <label class="checkbox-item"><input type="checkbox" name="t_anciennete" value="2-7j"/> 2–7j</label>
+              <label class="checkbox-item"><input type="checkbox" name="t_anciennete" value="plus7j"/> &gt;7j</label>
+              <label class="checkbox-item"><input type="checkbox" name="t_anciennete" value="autre" class="triggers-preciser" data-target="t_anciennete_autre_wrap"/> Autre</label>
+            </div>
+            <div class="preciser-field" id="t_anciennete_autre_wrap"><input type="text" name="t_anciennete_autre" placeholder="Préciser…" /></div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Les infiltrations apparaissent :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="t_condition" value="fortes_pluies"/> Fortes pluies</label>
+              <label class="checkbox-item"><input type="checkbox" name="t_condition" value="pluies_continues"/> Pluies continues</label>
+              <label class="checkbox-item"><input type="checkbox" name="t_condition" value="vent_pluie"/> Vent + pluie</label>
+              <label class="checkbox-item"><input type="checkbox" name="t_condition" value="fonte_neige"/> Fonte de neige</label>
+              <label class="checkbox-item"><input type="checkbox" name="t_condition" value="permanente"/> Permanente</label>
+              <label class="checkbox-item"><input type="checkbox" name="t_condition" value="autre" class="triggers-preciser" data-target="t_condition_autre_wrap"/> Autre</label>
+            </div>
+            <div class="preciser-field" id="t_condition_autre_wrap"><input type="text" name="t_condition_autre" placeholder="Préciser…" /></div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Zone intérieure impactée :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="t_zone_int" value="plafond"/> Plafond</label>
+              <label class="checkbox-item"><input type="checkbox" name="t_zone_int" value="mur"/> Mur</label>
+              <label class="checkbox-item"><input type="checkbox" name="t_zone_int" value="angle"/> Angle</label>
+              <label class="checkbox-item"><input type="checkbox" name="t_zone_int" value="autre" class="triggers-preciser" data-target="t_zone_int_autre_wrap"/> Autre</label>
+            </div>
+            <div class="preciser-field" id="t_zone_int_autre_wrap"><input type="text" name="t_zone_int_autre" placeholder="Préciser…" /></div>
+          </div>
+          <div class="field-group"><label>Observations complémentaires</label><textarea name="t_observations" rows="3"></textarea></div>
+        </div>
+      </div>
+    </div><!-- /panel-toiture -->
+
+    <!-- ======== EXTÉRIEUR ======== -->
+    <div class="panel" id="panel-exterieur">
+      <div class="form-card">
+        <div class="form-card-header"><span class="step-num">1</span> Origine du problème</div>
+        <div class="form-card-body">
+          <div class="check-group">
+            <label class="check-label">Depuis quand :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="e_anciennete" value="moins24h"/> &lt;24h</label>
+              <label class="checkbox-item"><input type="checkbox" name="e_anciennete" value="2-7j"/> 2–7j</label>
+              <label class="checkbox-item"><input type="checkbox" name="e_anciennete" value="plus7j"/> &gt;7j</label>
+              <label class="checkbox-item"><input type="checkbox" name="e_anciennete" value="autre" class="triggers-preciser" data-target="e_anciennete_autre_wrap"/> Autre</label>
+            </div>
+            <div class="preciser-field" id="e_anciennete_autre_wrap"><input type="text" name="e_anciennete_autre" placeholder="Préciser…" /></div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Surconsommation d'eau :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="surconso" value="oui"/> Oui</label>
+              <label class="checkbox-item"><input type="checkbox" name="surconso" value="non"/> Non</label>
+            </div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Compteur tourne (fermé) :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="compteur_tourne" value="oui"/> Oui</label>
+              <label class="checkbox-item"><input type="checkbox" name="compteur_tourne" value="non"/> Non</label>
+              <label class="checkbox-item"><input type="checkbox" name="compteur_tourne" value="non_teste"/> Non testé</label>
+            </div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Vanne générale testée :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="vanne_testee" value="oui"/> Oui</label>
+              <label class="checkbox-item"><input type="checkbox" name="vanne_testee" value="non"/> Non</label>
+            </div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Fuite visible :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="fuite_visible" value="oui"/> Oui</label>
+              <label class="checkbox-item"><input type="checkbox" name="fuite_visible" value="non"/> Non</label>
+            </div>
+          </div>
+          <div class="field-group"><label>Localisation fuite visible</label><input type="text" name="fuite_visible_loc" /></div>
+        </div>
+      </div>
+      <div class="form-card">
+        <div class="form-card-header"><span class="step-num">2</span> Localisation extérieure</div>
+        <div class="form-card-body">
+          <div class="check-group">
+            <label class="check-label">Zone concernée :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="e_zone" value="jardin"/> Jardin</label>
+              <label class="checkbox-item"><input type="checkbox" name="e_zone" value="terrain"/> Terrain</label>
+              <label class="checkbox-item"><input type="checkbox" name="e_zone" value="allee"/> Allée</label>
+              <label class="checkbox-item"><input type="checkbox" name="e_zone" value="terrasse"/> Terrasse</label>
+              <label class="checkbox-item"><input type="checkbox" name="e_zone" value="parking"/> Parking</label>
+              <label class="checkbox-item"><input type="checkbox" name="e_zone" value="bordure_maison"/> Bordure maison</label>
+              <label class="checkbox-item"><input type="checkbox" name="e_zone" value="autre" class="triggers-preciser" data-target="e_zone_autre_wrap"/> Autre</label>
+            </div>
+            <div class="preciser-field" id="e_zone_autre_wrap"><input type="text" name="e_zone_autre" placeholder="Préciser…" /></div>
+          </div>
+          <div class="field-group"><label>Distance compteur → maison (m)</label><input type="number" name="distance_compteur" placeholder="m" /></div>
+          <div class="check-group">
+            <label class="check-label">Type de sol :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="type_sol" value="terre"/> Terre</label>
+              <label class="checkbox-item"><input type="checkbox" name="type_sol" value="sable"/> Sable</label>
+              <label class="checkbox-item"><input type="checkbox" name="type_sol" value="gravier"/> Gravier</label>
+              <label class="checkbox-item"><input type="checkbox" name="type_sol" value="beton"/> Béton</label>
+              <label class="checkbox-item"><input type="checkbox" name="type_sol" value="enrobe"/> Enrobé</label>
+              <label class="checkbox-item"><input type="checkbox" name="type_sol" value="autre" class="triggers-preciser" data-target="type_sol_autre_wrap"/> Autre</label>
+            </div>
+            <div class="preciser-field" id="type_sol_autre_wrap"><input type="text" name="type_sol_autre" placeholder="Préciser…" /></div>
+          </div>
+        </div>
+      </div>
+      <div class="form-card">
+        <div class="form-card-header"><span class="step-num">3</span> Compteur &amp; Réseau</div>
+        <div class="form-card-body">
+          <div class="check-group">
+            <label class="check-label">Où se situe le compteur :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="compteur_loc" value="regard"/> Regard extérieur</label>
+              <label class="checkbox-item"><input type="checkbox" name="compteur_loc" value="coffret"/> Coffret</label>
+              <label class="checkbox-item"><input type="checkbox" name="compteur_loc" value="limite"/> Limite propriété</label>
+              <label class="checkbox-item"><input type="checkbox" name="compteur_loc" value="autre" class="triggers-preciser" data-target="compteur_loc_autre_wrap"/> Autre</label>
+            </div>
+            <div class="preciser-field" id="compteur_loc_autre_wrap"><input type="text" name="compteur_loc_autre" placeholder="Préciser…" /></div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Type de compteur :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="type_compteur" value="eau_potable"/> Eau potable</label>
+              <label class="checkbox-item"><input type="checkbox" name="type_compteur" value="divisionnaire"/> Divisionnaire</label>
+              <label class="checkbox-item"><input type="checkbox" name="type_compteur" value="autre" class="triggers-preciser" data-target="type_compteur_autre_wrap"/> Autre</label>
+            </div>
+            <div class="preciser-field" id="type_compteur_autre_wrap"><input type="text" name="type_compteur_autre" placeholder="Préciser…" /></div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Compteur accessible :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="compteur_accessible" value="oui"/> Oui</label>
+              <label class="checkbox-item"><input type="checkbox" name="compteur_accessible" value="non"/> Non</label>
+            </div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Regard / trappe :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="regard" value="oui"/> Oui</label>
+              <label class="checkbox-item"><input type="checkbox" name="regard" value="non"/> Non</label>
+            </div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Profondeur canalisation connue :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="profondeur_connue" value="oui"/> Oui</label>
+              <label class="checkbox-item"><input type="checkbox" name="profondeur_connue" value="non"/> Non</label>
+            </div>
+          </div>
+          <div class="field-group"><label>Profondeur estimée (cm)</label><input type="number" name="profondeur_cm" placeholder="cm" /></div>
+        </div>
+      </div>
+      <div class="form-card">
+        <div class="form-card-header"><span class="step-num">4</span> Installations extérieures</div>
+        <div class="form-card-body">
+          <div class="check-group">
+            <label class="check-label">Arrosage :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="arrosage" value="oui"/> Oui</label>
+              <label class="checkbox-item"><input type="checkbox" name="arrosage" value="non"/> Non</label>
+            </div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Type :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="type_arrosage" value="automatique"/> Automatique</label>
+              <label class="checkbox-item"><input type="checkbox" name="type_arrosage" value="goutte_a_goutte"/> Goutte-à-goutte</label>
+              <label class="checkbox-item"><input type="checkbox" name="type_arrosage" value="manuel"/> Manuel</label>
+              <label class="checkbox-item"><input type="checkbox" name="type_arrosage" value="autre" class="triggers-preciser" data-target="type_arrosage_autre_wrap"/> Autre</label>
+            </div>
+            <div class="preciser-field" id="type_arrosage_autre_wrap"><input type="text" name="type_arrosage_autre" placeholder="Préciser…" /></div>
+          </div>
+          <div class="check-group">
+            <label class="check-label">Vannes secondaires :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="vannes_sec" value="oui"/> Oui</label>
+              <label class="checkbox-item"><input type="checkbox" name="vannes_sec" value="non"/> Non</label>
+            </div>
+          </div>
+          <div class="field-group"><label>Localisation des vannes</label><input type="text" name="vannes_loc" /></div>
+        </div>
+      </div>
+      <div class="form-card">
+        <div class="form-card-header"><span class="step-num">5</span> Éléments complémentaires</div>
+        <div class="form-card-body">
+          <div class="check-group">
+            <label class="check-label">Photos disponibles :</label>
+            <div class="checks-row">
+              <label class="checkbox-item"><input type="checkbox" name="photos" value="compteur"/> Compteur</label>
+              <label class="checkbox-item"><input type="checkbox" name="photos" value="terrain"/> Terrain</label>
+              <label class="checkbox-item"><input type="checkbox" name="photos" value="zone_suspecte"/> Zone suspecte</label>
+            </div>
+          </div>
+          <div class="field-group"><label>Observations client</label><textarea name="e_observations_client" rows="3"></textarea></div>
+        </div>
+      </div>
+    </div><!-- /panel-exterieur -->
+
+    <!-- SUBMIT -->
+    <div class="submit-section">
+      <div class="submit-info">
+        <strong>Prêt à envoyer ?</strong>
+        <span>Le questionnaire sera transmis directement par email.</span>
+        <span class="email-badge">✉ nyfitiakarmela@gmail.com</span>
+      </div>
+      <div class="form-btns">
+        <button type="button" class="btn-secondary" id="clearFormBtn">Effacer</button>
+        <button type="button" class="btn-primary" id="sendFormBtn">
+          <span>✦ Envoyer le questionnaire</span>
+        </button>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+<!-- SUCCESS OVERLAY -->
+<div class="success-overlay" id="successOverlay">
+  <div class="success-card">
+    <div class="success-icon">✓</div>
+    <h2 class="success-title">Questionnaire envoyé !</h2>
+    <p class="success-sub">Votre formulaire a bien été transmis à <strong>nyfitiakarmela@gmail.com</strong>. Notre équipe prendra contact avec vous très prochainement.</p>
+    <button class="btn-primary" style="width:100%;justify-content:center" id="newFormBtn">Nouveau questionnaire</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+'use strict';
+
+// =====================================================
+// ⚠️  CONFIGURATION EMAILJS — À REMPLIR
+// -----------------------------------------------------
+// 1. Créer un compte gratuit sur https://www.emailjs.com
+// 2. Connecter votre service email (Gmail, etc.)
+// 3. Créer un "Email Template" et copier l'ID
+// 4. Copier votre "Public Key" (Account > API Keys)
+// 5. Remplacer les valeurs ci-dessous
+// =====================================================
+const EMAILJS_PUBLIC_KEY  = 'WRObk6XItB_ad2Wcv';   // Ex: 'abc123XYZ'
+const EMAILJS_SERVICE_ID  = 'service_310qkf3';   // Ex: 'service_xxxxxxx'
+const EMAILJS_TEMPLATE_ID = 'template_nsrtiz9';  // Ex: 'template_xxxxxxx'
+
+emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+// ============ PRÉCISER SI AUTRE ============
+document.addEventListener('change', function(e) {
+  if (e.target.classList.contains('triggers-preciser')) {
+    const targetId = e.target.dataset.target;
+    const wrap = document.getElementById(targetId);
+    if (!wrap) return;
+    const anyChecked = document.querySelectorAll(
+      '.triggers-preciser[data-target="' + targetId + '"]:checked'
+    ).length > 0;
+    wrap.classList.toggle('visible', anyChecked);
+    if (!anyChecked) {
+      const input = wrap.querySelector('input');
+      if (input) input.value = '';
+    }
+  }
+});
+
+// ============ TYPE SELECTOR ============
+let currentType = 'interieur';
+
+document.querySelectorAll('.type-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    currentType = btn.dataset.type;
+    document.querySelectorAll('.type-btn').forEach(b => b.classList.toggle('active', b === btn));
+    document.querySelectorAll('.panel').forEach(p  => p.classList.toggle('active', p.id === 'panel-' + currentType));
+  });
+});
+
+// ============ COLLECT FORM ============
+function collectForm() {
+  const form = document.getElementById('mainForm');
+  const data = { type: currentType };
+  data.refRapport = (document.getElementById('refRapport').value || '').trim();
+
+  const groups = {};
+  form.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+    if (!cb.name) return;
+    if (!groups[cb.name]) groups[cb.name] = [];
+    if (cb.checked) groups[cb.name].push(cb.value);
+  });
+  Object.assign(data, groups);
+
+  form.querySelectorAll('input[type="text"], input[type="number"], input[type="tel"], textarea').forEach(el => {
+    if (el.name) data[el.name] = el.value.trim();
+  });
+  data.createdAt = new Date().toLocaleString('fr-FR');
+  return data;
+}
+
+// ============ BUILD EMAIL TEXT ============
+function buildEmailText(data) {
+  const typeLabels = { interieur: 'Intérieur', piscine: 'Piscine', toiture: 'Toiture', exterieur: 'Extérieur' };
+  const val = v => !v ? '—' : Array.isArray(v) ? (v.length ? v.join(', ') : '—') : (v || '—');
+
+  function withAutre(v, autreVal) {
+    const base = val(v);
+    if (base === '—') return '—';
+    return (autreVal && Array.isArray(v) && v.includes('autre')) ? base + ' (' + autreVal + ')' : base;
+  }
+
+  function section(titre, lignes) {
+    const rows = lignes.filter(([, v]) => v && v !== '—' && !(Array.isArray(v) && !v.length));
+    if (!rows.length) return '';
+    return '\n\n=== ' + titre.toUpperCase() + ' ===\n' +
+      rows.map(([lbl, v]) => lbl + ' : ' + val(v)).join('\n');
+  }
+
+  let body = '📋 QUESTIONNAIRE D\'INTERVENTION — SOS FUITE D\'EAU\n';
+  body += '════════════════════════════════════════════════\n';
+  body += 'Dossier N° : ' + (data.refRapport || '—') + '\n';
+  body += 'Type       : ' + (typeLabels[data.type] || data.type) + '\n';
+  body += 'Date       : ' + data.createdAt + '\n';
+
+  if (data.type === 'interieur') {
+    body += section('1. Origine du sinistre', [
+      ['Ancienneté', withAutre(data.anciennete, data.anciennete_autre)],
+      ['Dégât progresse', data.degat_progresse], ['Eau coule', data.eau_coule],
+      ['Alimentation coupée', data.alim_coupee], ["Fuite s'arrête", data.fuite_arrete]
+    ]);
+    body += section('2. Localisation', [
+      ['Zone', withAutre(data.zone_int, data.zone_int_autre)],
+      ['Pièce(s)', withAutre(data.piece, data.piece_autre)],
+      ['Niveau', withAutre(data.niveau, data.niveau_autre)]
+    ]);
+    body += section('3. Environnement', [
+      ['Au-dessus', withAutre(data.au_dessus, data.au_dessus_autre)],
+      ['En dessous', withAutre(data.en_dessous, data.en_dessous_autre)],
+      ['Derrière mur', withAutre(data.derriere_mur, data.derriere_mur_autre)]
+    ]);
+    body += section('4. Humidité / Indices', [
+      ['Zone humide', data.zone_humide], ['Précision', data.zone_humide_precision],
+      ['Odeur', data.odeur], ['Indices', data.indices]
+    ]);
+    body += section('5. Installations / Travaux', [
+      ['Chauffe-eau', data.chauffe_eau],
+      ['Type chauffe-eau', withAutre(data.chauffe_eau_type, data.chauffe_eau_type_autre)],
+      ['Travaux récents', data.travaux],
+      ['Nature travaux', withAutre(data.travaux_nature, data.travaux_nature_autre)]
+    ]);
+    body += section('6. Personnes & Accès', [
+      ['Personne', data.personne], ['Téléphone', data.telephone],
+      ['Interlocuteur', data.interlocuteur], ['Coordonnées diff.', data.coordonnees_diff],
+      ['Accès', data.acces], ['Stationnement', data.stationnement], ['Contraintes', data.contraintes]
+    ]);
+  }
+
+  if (data.type === 'piscine') {
+    body += section("1. Origine / Perte d'eau", [
+      ['Ancienneté', withAutre(data.p_anciennete, data.p_anciennete_autre)],
+      ["Perte d'eau (cm/24h)", data.perte_eau],
+      ['Fuite se produit', withAutre(data.filtration_etat, data.filtration_etat_autre)],
+      ['Niveau/skimmers', withAutre(data.niveau_skimmer, data.niveau_skimmer_autre)]
+    ]);
+    body += section('2. Type de piscine', [
+      ['Type', data.type_piscine],
+      ['Revêtement', withAutre(data.revetement, data.revetement_autre)],
+      ['Volume (m³)', data.volume_piscine]
+    ]);
+    body += section('3. Équipements', [
+      ['Équipements', data.equip], ['Skimmers qté', data.qte_skimmers],
+      ['Refoulements', data.qte_refoulements], ['Prise balai', data.qte_prise_balai],
+      ['Bonde fond', data.qte_bonde], ['Trop-plein', data.qte_trop_plein],
+      ['Projecteurs', data.qte_projecteurs], ['Pompe', data.qte_pompe],
+      ['Filtre', data.qte_filtre], ['Type filtre', withAutre(data.type_filtre, data.type_filtre_autre)],
+      ['Bâche', data.qte_bache]
+    ]);
+    body += section('4. Local technique', [
+      ['Local présent', data.local_technique], ['Contient', data.local_contient],
+      ['Autre équip.', data.local_autre_equip], ['Traces humidité', data.p_humidite_local]
+    ]);
+    body += section('5. Analyse par zone', [
+      ['Skimmers défaut', withAutre(data.p_defaut_skimmer, data.p_defaut_skimmer_autre)],
+      ['Précision skimmers', data.p_defaut_skimmer_detail],
+      ['Micro-bulles', withAutre(data.p_microbulles, data.p_microbulles_autre)],
+      ['Bonde en cause', withAutre(data.p_bonde_cause, data.p_bonde_cause_autre)],
+      ['Prise balai perte', withAutre(data.p_prise_balai_perte, data.p_prise_balai_perte_autre)],
+      ['Canalisations enterrées', data.p_cana_enterrees],
+      ['Plan connu', data.p_plan_connu], ['Document dispo', data.p_plan_detail]
+    ]);
+    body += section('6. Personnes & Accès', [
+      ['Personne', data.p_personne], ['Téléphone', data.p_telephone],
+      ['Interlocuteur', data.p_interlocuteur], ['Coordonnées diff.', data.p_coordonnees_diff],
+      ['Accès', data.p_acces], ['Stationnement', data.p_stationnement], ['Contraintes', data.p_contraintes]
+    ]);
+  }
+
+  if (data.type === 'toiture') {
+    body += section('1. Origine', [
+      ['Ancienneté', withAutre(data.t_anciennete, data.t_anciennete_autre)],
+      ['Conditions', withAutre(data.t_condition, data.t_condition_autre)],
+      ['Zone intérieure', withAutre(data.t_zone_int, data.t_zone_int_autre)],
+      ['Observations', data.t_observations]
+    ]);
+  }
+
+  if (data.type === 'exterieur') {
+    body += section('1. Origine', [
+      ['Ancienneté', withAutre(data.e_anciennete, data.e_anciennete_autre)],
+      ['Surconso.', data.surconso], ['Compteur tourne', data.compteur_tourne],
+      ['Vanne testée', data.vanne_testee], ['Fuite visible', data.fuite_visible],
+      ['Localisation', data.fuite_visible_loc]
+    ]);
+    body += section('2. Localisation', [
+      ['Zone', withAutre(data.e_zone, data.e_zone_autre)],
+      ['Distance compteur', data.distance_compteur],
+      ['Type sol', withAutre(data.type_sol, data.type_sol_autre)]
+    ]);
+    body += section('3. Compteur & Réseau', [
+      ['Localisation compteur', withAutre(data.compteur_loc, data.compteur_loc_autre)],
+      ['Type compteur', withAutre(data.type_compteur, data.type_compteur_autre)],
+      ['Accessible', data.compteur_accessible], ['Regard', data.regard],
+      ['Profondeur connue', data.profondeur_connue], ['Profondeur (cm)', data.profondeur_cm]
+    ]);
+    body += section('4. Installations ext.', [
+      ['Arrosage', data.arrosage],
+      ['Type arrosage', withAutre(data.type_arrosage, data.type_arrosage_autre)],
+      ['Vannes sec.', data.vannes_sec], ['Loc. vannes', data.vannes_loc]
+    ]);
+    body += section('5. Compléments', [['Photos', data.photos], ['Observations', data.e_observations_client]]);
+    body += section('6. Personnes & Accès', [
+      ['Personne', data.e_personne], ['Téléphone', data.e_telephone],
+      ['Interlocuteur', data.e_interlocuteur], ['Accès', data.e_acces],
+      ['Stationnement', data.e_stationnement], ['Contraintes', data.e_contraintes]
+    ]);
+  }
+
+  return body;
+}
+
+// ============ RESET ============
+function resetForm() {
+  document.getElementById('mainForm').reset();
+  document.getElementById('refRapport').value = '';
+  document.querySelectorAll('.preciser-field').forEach(f => {
+    f.classList.remove('visible');
+    const input = f.querySelector('input');
+    if (input) input.value = '';
+  });
+}
+
+// ============ SEND ============
+document.getElementById('sendFormBtn').addEventListener('click', async () => {
+  const data = collectForm();
+
+  if (!data.refRapport) {
+    showToast("Veuillez remplir votre email avant d'envoyer.", 'error');
+    document.getElementById('refRapport').focus();
+    return;
+  }
+
+  const btn = document.getElementById('sendFormBtn');
+  btn.disabled = true;
+  btn.querySelector('span').textContent = 'Envoi en cours…';
+
+  try {
+    const typeLabels = { interieur: 'Intérieur', piscine: 'Piscine', toiture: 'Toiture', exterieur: 'Extérieur' };
+    const emailBody = buildEmailText(data);
+
+    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+      to_email: 'nyfitiakarmela@gmail.com',
+
+      // ✅ Variables du template
+      dossier: data.refRapport,
+      type_inter: typeLabels[data.type] || data.type,
+      date_envoi: data.createdAt,
+
+      // ✅ LE PLUS IMPORTANT
+      message: emailBody,   // ⚠️ c’est ça qui manquait dans ton email
+
+      // BONUS (optionnel mais propre)
+      name: data.personne || data.p_personne || data.e_personne || '',
+      email: data.email || '',
+    });
+
+    document.getElementById('successOverlay').classList.add('open');
+    resetForm();
+  } catch(e) {
+    console.error(e);
+    showToast('Erreur lors de l\'envoi. Vérifiez votre configuration EmailJS.', 'error');
+  } finally {
+    btn.disabled = false;
+    btn.querySelector('span').textContent = '✦ Envoyer le questionnaire';
+  }
+});
+
+// ============ EFFACER ============
+document.getElementById('clearFormBtn').addEventListener('click', () => {
+  if (confirm('Effacer tous les champs ?')) resetForm();
+});
+
+// ============ NOUVEAU FORMULAIRE ============
+document.getElementById('newFormBtn').addEventListener('click', () => {
+  document.getElementById('successOverlay').classList.remove('open');
+});
+
+// ============ TOAST ============
+let toastTimer;
+function showToast(msg, type) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show ' + (type || '');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { t.className = 'toast'; }, 4000);
+}
+</script>
+</body>
+</html>
