@@ -654,7 +654,7 @@
       <div class="submit-info">
         <strong>Prêt à envoyer ?</strong>
         <span>Le questionnaire sera transmis directement par email.</span>
-        <span class="email-badge">✉ nyfitiakarmela@gmail.com</span>
+        <span class="email-badge">✉ contact@sosfuitedeau.com</span>
       </div>
       <div class="form-btns">
         <button type="button" class="btn-secondary" id="clearFormBtn">Effacer</button>
@@ -672,7 +672,7 @@
   <div class="success-card">
     <div class="success-icon">✓</div>
     <h2 class="success-title">Questionnaire envoyé !</h2>
-    <p class="success-sub">Votre formulaire a bien été transmis à <strong>nyfitiakarmela@gmail.com</strong>. Notre équipe prendra contact avec vous très prochainement.</p>
+    <p class="success-sub">Votre formulaire a bien été transmis à <strong>contact@sosfuitedeau.com</strong>. Notre équipe prendra contact avec vous très prochainement.</p>
     <button class="btn-primary" style="width:100%;justify-content:center" id="newFormBtn">Nouveau questionnaire</button>
   </div>
 </div>
@@ -919,7 +919,7 @@ document.getElementById('sendFormBtn').addEventListener('click', async () => {
     const emailBody = buildEmailText(data);
 
     await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-      to_email: 'nyfitiakarmela@gmail.com',
+      to_email: 'contact@sosfuitedeau.com',
 
       // ✅ Variables du template
       dossier: data.refRapport,
