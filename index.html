@@ -55,7 +55,7 @@
   align-items: center;
 }
 
-.header-logo { width: 350px; height: 70px; object-fit: contain; border-radius: 10px; flex-shrink: 0; }
+.header-logo { width: 35%; height: 35%; object-fit: contain; border-radius: 10px; flex-shrink: 0; }
     .header-badge { display: inline-flex; align-items: center; gap: 6px; background: #adcb53; border: 1px solid var(--accent); border-radius: 20px; padding: 3px 10px; font-size: 11px; font-weight: 600; color: var(--accent); letter-spacing: .04em; margin-bottom: 6px; }
     .dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
     .header-sub { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
@@ -112,7 +112,7 @@
     .checkbox-item { display: flex; align-items: center; gap: 5px; background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 5px 10px; cursor: pointer; font-size: 12px; color: var(--text); transition: all .15s; user-select: none; }
     .checkbox-item:hover { border-color: var(--accent); color: var(--accent); }
     .checkbox-item input[type="checkbox"] { accent-color: var(--accent); width: 13px; height: 13px; cursor: pointer; }
-    .checkbox-item:has(input:checked) { background: var(--accent-light); border-color: var(--accent); color: var(--accent); font-weight: 500; }
+    .checkbox-item:has(input:checked) { background: #adcb53; border-color: var(--accent); color: var(--accent); font-weight: 500; }
 
     /* ===== PRECISER ===== */
     .preciser-field { display: none; margin-top: 4px; }
@@ -162,7 +162,7 @@
     /* ===== TOAST ===== */
     .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 10px 18px; font-size: 13px; color: var(--text); opacity: 0; transition: all .3s; pointer-events: none; z-index: 200; white-space: nowrap; }
     .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-    .toast.error { border-color: #e53e3e; color: #fc8181; }
+    .toast.error { border-color: #e53e3e; color: #adcb53; }
 
     /* ===== SUB-SECTION TITLE (for toiture modules) ===== */
     .sub-section-title {
@@ -190,8 +190,7 @@
 <!-- HEADER -->
 <header class="site-header">
   <div class="header-inner">
-    <img src="logo.png" alt="Logo" class="header-logo" />
-    <div class="header-text">
+<img src="https://sosfuitedeau.com/wp-content/uploads/2026/04/logo.png" alt="Logo" class="header-logo" />    <div class="header-text">
       <div class="header-badge">
         <span class="dot"></span>
         <span data-fr="Formulaire d'intervention" data-en="Intervention Form">Formulaire d'intervention</span>
